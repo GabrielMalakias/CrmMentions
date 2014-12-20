@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    	<%= link_to tweets_path do %>
+	      	<div class="navbar-brand">
+	        	<%= image_tag "logo.png", :style => "max-width:100px; margin-top: -7px;"%>
+	    	</div>
+	    <%end%>
+    </div>
+   	<%= link_to users_path do %>
+   		<p class="navbar-text">Users</p>
+ 	<%end%>
+ 	<%= link_to tweets_path do %>
+   		<p class="navbar-text">Tweets</p>
+ 	<%end%>
+  </div>
+</nav>

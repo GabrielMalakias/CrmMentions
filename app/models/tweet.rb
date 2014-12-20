@@ -1,5 +1,5 @@
 class Tweet < ActiveRecord::Base
-
+	paginates_per 5
    	belongs_to :user
 
     def parse(hash)
@@ -13,5 +13,9 @@ class Tweet < ActiveRecord::Base
     def self.tweet_to_hash(object)
     	{:retweet_count => object.retweet_count, :favorite_count => object.retweet_count, 
     		:text => object.text, :created_at => object.created_at}
+    end
+
+    def status_name
+    	status.blank? || status == 0 ? 'Pending' : 'Verified'
     end
 end

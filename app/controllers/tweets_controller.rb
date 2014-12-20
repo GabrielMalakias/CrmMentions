@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.page params[:page]
   end
 
   # GET /tweets/1
@@ -69,6 +69,6 @@ class TweetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tweet_params
-      params.require(:tweet).permit(:retweet_count, :favorite_count, :text, :created_at)
+      params.require(:tweet).permit(:retweet_count, :favorite_count, :text, :created_at, :status)
     end
 end

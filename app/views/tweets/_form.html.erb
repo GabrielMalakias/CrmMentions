@@ -13,19 +13,23 @@
 
   <div class="field">
     <%= f.label :retweet_count %><br>
-    <%= f.number_field :retweet_count %>
+    <%= @tweet.retweet_count %>
   </div>
   <div class="field">
     <%= f.label :favorite_count %><br>
-    <%= f.number_field :favorite_count %>
+    <%= @tweet.favorite_count%>
   </div>
   <div class="field">
     <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= @tweet.text%>
   </div>
   <div class="field">
     <%= f.label :created_at %><br>
-    <%= f.datetime_select :created_at %>
+    <%= @tweet.created_at%>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select :status, [1, 0]  %>
   </div>
   <div class="actions">
     <%= f.submit %>
