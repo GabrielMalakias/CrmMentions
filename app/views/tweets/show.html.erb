@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Retweets:</strong>
-  <%= @tweet.retweets %>
+  <strong>Retweet count:</strong>
+  <%= @tweet.retweet_count %>
 </p>
 
 <p>
-  <strong>Favorited:</strong>
-  <%= @tweet.favorited %>
+  <strong>Favorite count:</strong>
+  <%= @tweet.favorite_count %>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @tweet.content %>
+  <strong>Text:</strong>
+  <%= @tweet.text %>
 </p>
 
 <p>
-  <strong>Post date:</strong>
-  <%= @tweet.post_date %>
+  <strong>Created at:</strong>
+  <%= @tweet.created_at %>
 </p>
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> |

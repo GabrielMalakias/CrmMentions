@@ -4,14 +4,14 @@ RSpec.describe "tweets/index", :type => :view do
   before(:each) do
     assign(:tweets, [
       Tweet.create!(
-        :retweets => 1,
-        :favorited => 2,
-        :content => "Content"
+        :retweet_count => 1,
+        :favorite_count => 2,
+        :text => "Text"
       ),
       Tweet.create!(
-        :retweets => 1,
-        :favorited => 2,
-        :content => "Content"
+        :retweet_count => 1,
+        :favorite_count => 2,
+        :text => "Text"
       )
     ])
   end
@@ -20,6 +20,6 @@ RSpec.describe "tweets/index", :type => :view do
     render
     assert_select "tr>td", :text => 1.to_s, :count => 2
     assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => "Content".to_s, :count => 2
+    assert_select "tr>td", :text => "Text".to_s, :count => 2
   end
 end

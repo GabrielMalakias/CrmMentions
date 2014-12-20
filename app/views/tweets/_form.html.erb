@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :retweets %><br>
-    <%= f.number_field :retweets %>
+    <%= f.label :retweet_count %><br>
+    <%= f.number_field :retweet_count %>
   </div>
   <div class="field">
-    <%= f.label :favorited %><br>
-    <%= f.number_field :favorited %>
+    <%= f.label :favorite_count %><br>
+    <%= f.number_field :favorite_count %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
   </div>
   <div class="field">
-    <%= f.label :post_date %><br>
-    <%= f.datetime_select :post_date %>
+    <%= f.label :created_at %><br>
+    <%= f.datetime_select :created_at %>
   </div>
   <div class="actions">
     <%= f.submit %>

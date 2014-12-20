@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220144812) do
+ActiveRecord::Schema.define(version: 20141220161038) do
 
   create_table "tweets", force: true do |t|
-    t.integer  "retweets",   limit: 4
-    t.integer  "favorited",  limit: 4
-    t.string   "content",    limit: 255
-    t.datetime "post_date"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "retweet_count",  limit: 4
+    t.integer  "favorite_count", limit: 4
+    t.string   "text",           limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "user_id",        limit: 4
   end
 
   create_table "users", force: true do |t|
