@@ -8,18 +8,18 @@ Esta aplicação foi feita como forma de demonstração de minhas habilidades co
 
 	Esta aplicação utliza o Ruby na versão 2.1.3.
 	
-	´´´console
+	```console
 	gabriel@gabriel-malakias:~/Desktop/Lw_System/CrmMentions$ ruby -v
 	ruby 2.1.3p242 (2014-09-19 revision 47630) [x86_64-linux]
-
-	´´´
+	```
+	
 	
 	e o Rails versão 4.2.
 	
-	´´´console
+	```console
 	gabriel@gabriel-malakias:~/Desktop/Lw_System/CrmMentions$ rails -v
 	Rails 4.2.0.rc2
-	´´´
+	```
  
 * System dependencies
 
