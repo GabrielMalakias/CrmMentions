@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Screen name:</strong>
+  <%= @user.screen_name %>
+</p>
+
+<p>
+  <strong>Number followers:</strong>
+  <%= @user.number_followers %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

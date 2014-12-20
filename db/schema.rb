@@ -11,6 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141220144812) do
+
+  create_table "tweets", force: true do |t|
+    t.integer  "retweets",   limit: 4
+    t.integer  "favorited",  limit: 4
+    t.string   "content",    limit: 255
+    t.datetime "post_date"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "screen_name",      limit: 255
+    t.integer  "number_followers", limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
 end
