@@ -2,8 +2,7 @@ CrmMentions
 ===========
 
 Esta aplicação foi feita como forma de demonstração de minhas habilidades com o RubyOnRails. Tem o objetivo de buscar os tweets de que mencionam determinado usuário para descobrir o que está sendo dito no Twitter.
-
-=== Versões
+### Versões
 
 	Ruby version
 
@@ -21,7 +20,7 @@ Esta aplicação foi feita como forma de demonstração de minhas habilidades co
 	$ rails -v
 	Rails 4.2.0.rc2
 	```
- === Instalação
+ ### Instalação
 
 Para realizar a instalação da ferramenta é necessário baixar o código do github, para isso digite
 
@@ -41,7 +40,7 @@ Para rodar o projeto
 	```console
 	$ rails s
 	```
-=== Atualização
+### Atualização
 
 Este projeto utiliza a gem <a href="https://github.com/collectiveidea/delayed_job">delayed_job</a>, para processamentos assíncronos, assim após solicitar o update no menu do projeto e escolher o tipo de resultado, execute 
 	```console
@@ -49,7 +48,7 @@ Este projeto utiliza a gem <a href="https://github.com/collectiveidea/delayed_jo
 	```
 Este passo fará o download e criação dos tweets no banco de dados local
 
-=== Testes
+### Testes
 
 Para executar os testes execute 
 	```console
