@@ -1,37 +1,42 @@
-<%= form_for(@tweet) do |f| %>
-  <% if @tweet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
-
-      <ul>
-      <% @tweet.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @tweet, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :text, :class => 'control-label' %>
+    <div class="controls">
+      <%= @tweet.text%>
     </div>
-  <% end %>
+  </div>
 
-  <div class="input-group">
-    <%= f.label :retweet_count %><br>
-    <%= @tweet.retweet_count %>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= @tweet.status_name %>
+    </div>
   </div>
-  <div class="input-group">
-    <%= f.label :favorite_count %><br>
-    <%= @tweet.favorite_count%>
+
+  <div class="control-group">
+    <%= f.label :user, :class => 'control-label' %>
+    <div class="controls">
+      <%= link_to @tweet.user.screen_name, "https://twitter.com/#{@tweet.user.screen_name}"%>
+    </div>
   </div>
-  <div class="input-group">
-    <%= f.label :text %><br>
-    <%= @tweet.text%>
+
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label'%>
+    <div class="controls">
+      <%= f.select :status, options_from_collection_for_select(I18n.t('status'), :first, :last, @tweet.status) %>
+    </div>
   </div>
-  <div class="input-group">
-    <%= f.label :created_at %><br>
-    <%= @tweet.created_at%>
+
+  <div class="control-group">
+    <%= f.label :created_at, :class => 'control-label' %><br>
+    <div class="controls">
+      <%= link_to @tweet.created_at, "https://twitter.com/#{@tweet.user.screen_name}/status/#{@tweet.tweet_id}" %>
+    </div>
   </div>
-  <div class="input-group">
-    <%= f.label :status %><br>
-    <%= f.select :status, [1, 0], :class => 'form-control'%>
-  </div>
-  <div class="actions btn-group">
-    <%= f.submit 'submit', :class => 'btn btn-danger'%>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tweets_path, :class => 'btn' %>
   </div>
 <% end %>

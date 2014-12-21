@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+	paginates_per 10
 	has_many :tweets, dependent: :destroy
 
 	def parse(hash)

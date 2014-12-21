@@ -8,14 +8,14 @@
 	    <%end%>
     </div>
    	<%= link_to users_path do %>
-   		<p class="navbar-text">Users</p>
+   		<p class="navbar-text"><%= I18n.t('models.user')%></p>
  	<%end%>
  	<%= link_to tweets_path do %>
-   		<p class="navbar-text">Tweets</p>
+   		<p class="navbar-text"><%= I18n.t('models.tweet')%></p>
  	<%end%>
 
   <%= link_to parse_tweets_path do %>
-      <p class="navbar-text">Update</p>
+      <p class="navbar-text"><%= I18n.t('update')%></p>
   <%end%>
   
   </div>

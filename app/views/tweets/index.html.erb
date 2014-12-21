@@ -1,38 +1,43 @@
-<h1>Listing Tweets</h1>
+<%- model_class = Tweet -%>
+<%- user_model_class = Tweet -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Text</th>
-      <th>User Profile</th>
-      <th>Created at</th>
-      <th>Status</th>
-      <th colspan="3"></th>
+      <th><%= I18n.t('tweet.text') %></th>
+      <th><%= I18n.t('user.screen_name') %></th>      
+      <th><%= I18n.t('user.number_followers') %></th>
+      <th><%= I18n.t('tweet.status') %></th>
+      <th><%= I18n.t('tweet.created_at') %></th>
+      <th><%= I18n.t('tweet.retweet_count') %></th>
+      <th><%= I18n.t('tweet.favorite_count') %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tweets.each do |tweet| %>
       <tr>
+        <td><%= link_to tweet.text, "https://twitter.com/#{tweet.user.screen_name}/status/#{tweet.tweet_id}"%></td>
+        <td><%= link_to tweet.user.screen_name, "https://twitter.com/#{tweet.user.screen_name}"%></td>
+        <td><%= tweet.user.number_followers %></td>
+        <td><%= tweet.status_name %></td>
+        <td><%= link_to tweet.created_at, "https://twitter.com/#{tweet.user.screen_name}/status/#{tweet.tweet_id}" %></td>
+        <td><%= tweet.retweet_count %></td>
+        <td><%= tweet.favorite_count %></td>
         <td>
-          <%= link_to "https://twitter.com/#{tweet.user.screen_name}/status/#{tweet.tweet_id}" do
-              tweet.text
-          end%>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_tweet_path(tweet), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      tweet_path(tweet),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
         </td>
-        <td>
-          <%= link_to "https://twitter.com/#{tweet.user.screen_name}" do
-              tweet.user.screen_name
-          end%>
-        </td>
-        <td><%= tweet.created_at %></td>
-        <td><%= tweet.status_name %></span></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
 <%= paginate @tweets %>

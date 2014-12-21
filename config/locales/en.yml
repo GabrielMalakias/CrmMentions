@@ -20,4 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: Hello world
+  update_mode: Update Mode
+  result_type: Result Type
+  update: Update
+  models:
+    user: User
+    tweet: Tweet
+  status:
+    1: Verified
+    0: Pending
+  tweet:
+    retweet_count: Retweet Count
+    favorite_count: Favorite Count
+    text: Text
+    created_at: Created at
+    status: Status
+  user: 
+    screen_name: Screen Name
+    number_followers: Number Followers

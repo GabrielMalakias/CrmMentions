@@ -1,7 +1,8 @@
 class Tweet < ActiveRecord::Base
 	paginates_per 5
    	belongs_to :user
-    default_scope {includes(:user).order('users.number_followers DESC')} 
+    default_scope {includes(:user).order('users.number_followers DESC, tweets.retweet_count, tweets.favorite_count')} 
+    
     def parse(hash)
     	self.assign_attributes(hash)
     end
@@ -16,7 +17,7 @@ class Tweet < ActiveRecord::Base
     end
 
     def status_name
-    	status.blank? || status == 0 ? 'Pending' : 'Verified'
+    	status.blank? || status == 0 ? I18n.t('status.0') : I18n.t('status.1')
     end
 
 end
