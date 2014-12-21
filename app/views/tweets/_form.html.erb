@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="input-group">
     <%= f.label :retweet_count %><br>
     <%= @tweet.retweet_count %>
   </div>
-  <div class="field">
+  <div class="input-group">
     <%= f.label :favorite_count %><br>
     <%= @tweet.favorite_count%>
   </div>
-  <div class="field">
+  <div class="input-group">
     <%= f.label :text %><br>
     <%= @tweet.text%>
   </div>
-  <div class="field">
+  <div class="input-group">
     <%= f.label :created_at %><br>
     <%= @tweet.created_at%>
   </div>
-  <div class="field">
+  <div class="input-group">
     <%= f.label :status %><br>
-    <%= f.select :status, [1, 0]  %>
+    <%= f.select :status, [1, 0], :class => 'form-control'%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions btn-group">
+    <%= f.submit 'submit', :class => 'btn btn-danger'%>
   </div>
 <% end %>

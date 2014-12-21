@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Tweets</h1>
 
 <table class="table">
@@ -17,7 +15,7 @@
     <% @tweets.each do |tweet| %>
       <tr>
         <td>
-          <%= link_to tweet_path(tweet) do
+          <%= link_to "https://twitter.com/#{tweet.user.screen_name}/status/#{tweet.tweet_id}" do
               tweet.text
           end%>
         </td>

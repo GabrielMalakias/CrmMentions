@@ -61,6 +61,14 @@ class TweetsController < ApplicationController
     end
   end
 
+  def parse
+    @options = Services::TwitterUpdater.result_type_options
+    if params[:result_type].present?
+      Services::TwitterUpdater.new.delay.update!(params[:result_type])
+      flash[:notice] = "Job added in process with success"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tweet

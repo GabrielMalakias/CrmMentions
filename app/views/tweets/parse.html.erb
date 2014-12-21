@@ -1,0 +1,7 @@
+<%= form_tag parse_tweets_path do %>
+
+  <%= label_tag 'Result Type' %>
+  <%= select_tag :result_type, options_for_select(@options) %>
+
+  <%= submit_tag %>
+<% end %>
