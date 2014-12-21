@@ -9,14 +9,22 @@
     </div>
    	<%= link_to users_path do %>
    		<p class="navbar-text"><%= I18n.t('models.user')%></p>
- 	<%end%>
- 	<%= link_to tweets_path do %>
+ 	  <%end%>
+ 	  <%= link_to tweets_path do %>
    		<p class="navbar-text"><%= I18n.t('models.tweet')%></p>
- 	<%end%>
+ 	  <%end%>
 
-  <%= link_to parse_tweets_path do %>
+    <%= link_to parse_tweets_path do %>
       <p class="navbar-text"><%= I18n.t('update')%></p>
-  <%end%>
-  
+    <%end%>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <div class='navbar-text'>
+        <%= link_to root_path(:locale => 'en') do
+           image_tag "uk.png", :style => "max-width:25px; margin-top: -7px;"
+        end %>
+        </div> 
+      </ul>
+    </div>
   </div>
 </nav>

@@ -11,7 +11,7 @@ module Services
 		end
 
 		def tweets_mention_by_user(twitter_user=TWITTER_USER, result_type=RESULT_TYPE)
-			client.search("to:#{twitter_user}", result_type: result_type).collect do |tweet|
+			client.search("to:#{twitter_user} exclude:retweets", result_type: result_type).collect do |tweet|
 				add_tweet_in_database(tweet)
 			end
 		end

@@ -17,7 +17,7 @@ class Tweet < ActiveRecord::Base
     end
 
     def status_name
-    	status.blank? || status == 0 ? I18n.t('status.0') : I18n.t('status.1')
+    	status.blank? || status == 0 ? I18n.t('status')[0] : I18n.t('status')[1]
     end
 
 end

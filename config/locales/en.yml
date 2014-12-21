@@ -28,8 +28,8 @@ en:
     user: User
     tweet: Tweet
   status:
-    1: Verified
     0: Pending
+    1: Verified
   tweet:
     retweet_count: Retweet Count
     favorite_count: Favorite Count

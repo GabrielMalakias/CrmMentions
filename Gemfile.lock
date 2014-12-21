@@ -67,6 +67,8 @@ GEM
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.2.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     globalid (0.3.0)
@@ -219,6 +221,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   daemons
   delayed_job_active_record
+  factory_girl
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
