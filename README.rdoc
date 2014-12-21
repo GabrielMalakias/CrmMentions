@@ -43,7 +43,7 @@ Para rodar o projeto
 ```console
 $ rails s
 ```
-### Atualização
+###Atualização
 
 Este projeto utiliza a gem <a href="https://github.com/collectiveidea/delayed_job">delayed_job</a>, para processamentos assíncronos, assim após solicitar o update no menu do projeto e escolher o tipo de resultado, execute 
 	
