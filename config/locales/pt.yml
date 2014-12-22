@@ -7,7 +7,7 @@ pt:
     tweet: Tweet
   status:
     0: Pendente
-    1: Verrificado
+    1: Verificado
   tweet:
     retweet_count: Contagem de Retweets
     favorite_count: Contagem de favoritos
