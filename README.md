@@ -19,7 +19,7 @@ $ rails -v
 Rails 4.2.0.rc2
 ```
 
- ### Instalação
+ ###Instalação
 
 Para realizar a instalação da ferramenta é necessário baixar o código do github, para isso digite
 

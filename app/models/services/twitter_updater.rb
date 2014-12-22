@@ -19,9 +19,10 @@ module Services
 		def add_tweet_in_database(object)
 			user = User.new
 			tweet = Tweet.new
-			user.parse(User.tweet_to_hash(object.user))
+			hash_user = User.tweet_to_hash(object.user)
 			tweet.parse(Tweet.tweet_to_hash(object))
-			user.save if user.not_exists?
+			user.parse(hash_user)
+			user.save_or_change(hash_user)
 			tweet.user = user
 			tweet.save if tweet.not_exists?
 		end
