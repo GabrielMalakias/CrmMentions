@@ -3,13 +3,16 @@ development:
     consumer_secret: p3wYxTMIMVW71texDNnXRGZxrfKsYPAlyrBUD6B5GMlXN5g8s7
     access_token: 311013334-Iiio7A7K8wMw05ZolYc7aQFHVvPkXr8X2pytJiR7
     access_token_secret: amrGBn5q5Nxbxg4zxMfvtUEsPZabpONsARlJPHzQDCTEt
+    user: locaweb
 test:
     consumer_key: EKJGsVf1CRRWx67K8bMngwyec
     consumer_secret: p3wYxTMIMVW71texDNnXRGZxrfKsYPAlyrBUD6B5GMlXN5g8s7
     access_token: 311013334-Iiio7A7K8wMw05ZolYc7aQFHVvPkXr8X2pytJiR7
     access_token_secret: amrGBn5q5Nxbxg4zxMfvtUEsPZabpONsARlJPHzQDCTEt
+    user: locaweb
 production:
     consumer_key: EKJGsVf1CRRWx67K8bMngwyec
     consumer_secret: p3wYxTMIMVW71texDNnXRGZxrfKsYPAlyrBUD6B5GMlXN5g8s7
     access_token: 311013334-Iiio7A7K8wMw05ZolYc7aQFHVvPkXr8X2pytJiR7
     access_token_secret: amrGBn5q5Nxbxg4zxMfvtUEsPZabpONsARlJPHzQDCTEt
+    user: locaweb

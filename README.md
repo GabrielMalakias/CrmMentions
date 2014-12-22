@@ -19,7 +19,7 @@ $ rails -v
 Rails 4.2.0.rc2
 ```
 
- ###Instalação
+###Instalação
 
 Para realizar a instalação da ferramenta é necessário baixar o código do github, para isso digite
 
@@ -43,6 +43,10 @@ Para rodar o projeto
 ```console
 $ rails s
 ```
+Abra o navegador de sua preferência e acesse o projeto com a seguinte url
+
+	http://localhost:3000 ou http://127.0.0.1:3000/
+
 ### Atualização
 
 Este projeto utiliza a gem <a href="https://github.com/collectiveidea/delayed_job">delayed_job</a>, para processamentos assíncronos, assim após solicitar o update no menu do projeto e escolher o tipo de resultado, execute 

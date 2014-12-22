@@ -1,10 +1,10 @@
 module Services
 
 	class TwitterUpdater
-		TWITTER_USER = 'locaweb'
+		TWITTER_USER = TWITTER_CONFIG['user']
 		RESULT_TYPE = 'recent'
 
-		attr_accessor :client
+		attr_accessor :client, :user
 		
 		def initialize
 			@client = Services::TwitterClient.create!
@@ -17,18 +17,26 @@ module Services
 		end
 
 		def add_tweet_in_database(object)
-			user = User.new
+			add_user(object)
+			add_tweet(object)
+		end
+		
+		def add_tweet(object)
 			tweet = Tweet.new
-			hash_user = User.tweet_to_hash(object.user)
 			tweet.parse(Tweet.tweet_to_hash(object))
-			user.parse(hash_user)
-			user.save_or_change(hash_user)
-			tweet.user = user
+			tweet.user = @user
 			tweet.save if tweet.not_exists?
+		end
+		
+		def add_user(object)
+			@user = User.new
+			hash_user = User.tweet_to_hash(object.user)
+			@user.parse(hash_user)
+			@user.save_or_change(hash_user)
 		end
 
 		def update!(result_type)
-			tweets_mention_by_user('locaweb', result_type)
+			tweets_mention_by_user(TWITTER_USER, result_type)
 		end
 
 		def self.result_type_options

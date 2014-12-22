@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
 	paginates_per 10
 	has_many :tweets, dependent: :destroy
-
+	default_scope {order('users.number_followers DESC')} 
+	
 	def parse(hash)
 		self.assign_attributes(hash)
 	end
