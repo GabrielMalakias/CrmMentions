@@ -17,14 +17,16 @@
     <%= link_to parse_tweets_path do %>
       <p class="navbar-text"><%= I18n.t('update')%></p>
     <%end%>
-    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <div class='navbar-text'>
+        <%= link_to root_path(:locale => 'pt') do
+           image_tag "br.jpg", :style => "max-width:25px; margin-top: -7px;"
+        end %>
         <%= link_to root_path(:locale => 'en') do
            image_tag "uk.png", :style => "max-width:25px; margin-top: -7px;"
         end %>
         </div> 
       </ul>
-    </div>
+
   </div>
 </nav>

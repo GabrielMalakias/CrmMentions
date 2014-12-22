@@ -1,0 +1,26 @@
+pt:
+  update_mode: Modo de atualização
+  result_type: Tipo de Resultado
+  update: Atualizar
+  models:
+    user: Usuário
+    tweet: Tweet
+  status:
+    0: Pendente
+    1: Verrificado
+  tweet:
+    retweet_count: Contagem de Retweets
+    favorite_count: Contagem de favoritos
+    text: Texto
+    created_at: Criado em
+    status: Status
+  user: 
+    screen_name: Nome
+    number_followers: Número de seguidores
+  time:
+    am: ''
+    pm: ''
+    formats:
+      default:  '%a, %d de %B de %Y, %H:%M:%S %z'
+      long:  '%d de %B de %Y, %H:%M'
+      short:  '%d de %B, %H:%M'

@@ -1,41 +1,34 @@
 <%= form_for @tweet, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :text, :class => 'control-label' %>
+    <%= f.label I18n.t('tweet.text'), :class => 'control-label' %>
     <div class="controls">
       <%= @tweet.text%>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :status, :class => 'control-label' %>
-    <div class="controls">
-      <%= @tweet.status_name %>
-    </div>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :user, :class => 'control-label' %>
+    <%= f.label I18n.t('models.user'), :class => 'control-label' %>
     <div class="controls">
       <%= link_to @tweet.user.screen_name, "https://twitter.com/#{@tweet.user.screen_name}"%>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :status, :class => 'control-label'%>
+    <%= f.label I18n.t('tweet.status'), :class => 'control-label'%>
     <div class="controls">
       <%= f.select :status, options_from_collection_for_select(I18n.t('status'), :first, :last, @tweet.status) %>
     </div>
   </div>
 
   <div class="control-group">
-    <%= f.label :created_at, :class => 'control-label' %><br>
+    <%= f.label I18n.t('tweet.created_at'), :class => 'control-label' %><br>
     <div class="controls">
-      <%= link_to @tweet.created_at, "https://twitter.com/#{@tweet.user.screen_name}/status/#{@tweet.tweet_id}" %>
+      <%= link_to I18n.localize(@tweet.created_at), "https://twitter.com/#{@tweet.user.screen_name}/status/#{@tweet.tweet_id}" %>
     </div>
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit I18n.t('update') , :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 tweets_path, :class => 'btn' %>
   </div>
