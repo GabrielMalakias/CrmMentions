@@ -61,5 +61,7 @@ Este passo fará o download e criação dos tweets no banco de dados local
 
 Para executar os testes execute 
 ```console
-$ rspec
+$ rspec spec/models/twitter_updater_test.rb
 ```
+No exemplo acima, a classe sendo testada é a Services::TwiiterUpdater, para testar as outras basta trocar o nome do arquivo  a ser testado dentro da mesma pasta
+

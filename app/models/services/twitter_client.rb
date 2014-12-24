@@ -8,7 +8,6 @@ module Services
 			  config.consumer_secret     = TWITTER_CONFIG['consumer_secret']
 			  config.access_token        = TWITTER_CONFIG['access_token']
 			  config.access_token_secret = TWITTER_CONFIG['access_token_secret']
-
 			end
 		end  
 	

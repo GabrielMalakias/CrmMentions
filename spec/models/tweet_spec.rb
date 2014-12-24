@@ -13,4 +13,21 @@ RSpec.describe Tweet, :type => :model do
 		expect(tweet.created_at).to eq(time)
 		expect(tweet.tweet_id).to eq('465465545646')
 	end
+
+	it "Verify a existent tweet" do
+		tweet = Tweet.new
+		time = Time.now
+		tweet.created_at = time
+		tweet.text = 'test tweet'
+		tweet.save
+		expect(tweet.not_exists?).to eq(false)
+	end	
+
+	it "Verify a status name" do
+		tweet = Tweet.new
+		tweet.status = 0
+		expect(tweet.status_name).to eq('Pending')
+		tweet.status = 1
+		expect(tweet.status_name).to eq('Verified')
+	end
 end
